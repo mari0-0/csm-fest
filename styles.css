@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+  margin: 0;
+}
+
+body{
+  margin: 0;
+  background-color: #FFF3CF;
+  color: #E8C872;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none!important;
+}
+
+.overlay-disable{
+  display: none;
+}
+.overlay-active{
+  display: block;
+}
+
+.card-container {
+  perspective: 2000px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 500px;
+  height: 250px;
+  margin: 10px;
+  padding-left: 35px;
+
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  
+}
+
+.disabled:hover,  .disabled .front:hover{
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+.card .front,
+.card .back {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card .front {
+  font-size: 30px;
+  font-weight:600;
+  letter-spacing: 2px;
+  background: #637A9F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .back {
+  font-size: 20px;
+  color: black;
+  background: #86A7FC;
+  transform: rotateY(180deg);
+  
+}
+
+.content{
+  padding: 1rem 2rem;
+}
+
+.topic-heading{
+  font-size: 28px;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.question{
+  display: flex;
+}
+
+.q-icon{
+  padding-top: 17px;
+  margin-right: 10px;
+}
+.disabled .back:hover{
+  transform: translateY(-10px) rotateY(180deg);
+}
+
+
+.btn-nxt {
+  float: right;
+  background-color: #FFF3CF;
+  border: 1px solid #FFF3CF;
+  margin-top: 5px;
+
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-size: 20px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+}
+
+.btn-nxt:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.btn-nxt:focus {
+  border-color: #4285f4;
+  outline: none;
+}
+
+.card-gray{
+  background: rgb(128,127,127);
+  background: radial-gradient(circle, rgba(128,127,127,1) 0%, rgba(121,121,121,1) 34%, rgba(71,71,71,1) 100%)!important;
+}

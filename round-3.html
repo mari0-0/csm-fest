@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Round 3</title>
+    
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b481283466.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .active {
+        transform: rotateY(180deg) translate(50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        height: 70%;
+        width: 70%;
+      }
+
+      .non-active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-container">
+      <div id="overlay" class="overlay-disable"></div>
+      <div class="card disabled" onclick="flipCard(this, 0)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 1)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 2)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 3)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 4)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 5)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 6)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 7)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      <div class="card disabled" onclick="flipCard(this, 8)">
+        <div class="front">
+          <span class="click-me">Click Me
+          <i
+            class="fa-solid fa-arrow-pointer fa-sm"
+            style="margin-left: 1rem"
+          ></i></span>
+        </div>
+        <div class="back">
+          <div class="content">
+            <h3 class="topic-heading">Topic Heading</h3>
+            <span class="video"> </span>
+            <button class="btn-nxt">Next</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <script>
+      const videos = [
+        `qgnDbQ1aM54?si=uKjUwkZ8h8RBH9wX`,
+        `lMVv3qz-rHs?si=7vx3RgGZtWjjNEsS`,
+        `qgnDbQ1aM54?si=uKjUwkZ8h8RBH9wX`,
+        `lMVv3qz-rHs?si=7vx3RgGZtWjjNEsS`,
+        `qgnDbQ1aM54?si=uKjUwkZ8h8RBH9wX`,
+        `lMVv3qz-rHs?si=7vx3RgGZtWjjNEsS`,
+        `qgnDbQ1aM54?si=uKjUwkZ8h8RBH9wX`,
+        `lMVv3qz-rHs?si=7vx3RgGZtWjjNEsS`,
+        `qgnDbQ1aM54?si=uKjUwkZ8h8RBH9wX`,
+      ];
+
+      function flipCard(card, idx) {
+        const videoSpan = card.querySelector(".video");
+
+        if (card.style.transform === "rotateY(180deg)") {
+          card.style.transform = "rotateY(0deg)";
+          videoSpan.innerHTML = ""; 
+        } else {
+          var overlay = document.getElementById("overlay");
+          overlay.setAttribute("class", "overlay-active");
+          card.removeAttribute("onclick");
+          card.setAttribute("class", "card active");
+          card.querySelector(".content").style.height = "80%";
+          card.querySelector(".btn-nxt").setAttribute("onclick", `handleNext(${idx})`)
+          videoSpan.innerHTML = `
+          <iframe style="width: 100%; height: 100%;" src="https://www.youtube.com/embed/${videos[idx]}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          `;
+        }
+      }
+
+      function handleNext(idx){
+        var overlay = document.getElementById("overlay");
+        overlay.setAttribute("class", "overlay-disable");
+        card = document.querySelectorAll('.card')[idx]
+        card.setAttribute("class", "card");
+        card.querySelector(".front").setAttribute("class", "front card-gray");
+        card.removeChild(card.children[1]);
+        card.querySelector('.click-me').innerHTML = ""
+      }
+
+    </script>
+  </body>
+</html>
